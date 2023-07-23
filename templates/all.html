@@ -1,0 +1,16 @@
+{% for cupcake in cupcakes %}
+    <h1>{{ cupcake["name"] }}</h1>
+    
+    <h2>Price: {{cupcake["price"] }}</h2>
+    <h2>Cake: {{cupcake["cake"] }}</h2>
+    <h2>Icing: {{ cupcake["icing"] }}</h2>
+    <h2>Filling: {{ cupcake["icing"] }}</h2>
+
+    <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
+        <button>Add to Cart</button>
+    </a>
+
+    <a href="{{ url_for('fav_cupcake', name=cupcake['name']) }}">
+        <button>Add to Favorites</button>
+    </a>
+{% endfor %}
